@@ -12,7 +12,7 @@ class Member:
             print("Tidak ada Mahasiswa yang terdaftar dalam member.")
         else:
             print("="*30)
-            print(f"{'ID':<10}{'Nama':<20}")
+            print(f"{'NIM':<10}{'Nama':<20}")
             print("="*30)
             for member in cls.daftar_member:
                 print(f"{member.nim_mahasiswa:<10}{member.nama:<20}")
