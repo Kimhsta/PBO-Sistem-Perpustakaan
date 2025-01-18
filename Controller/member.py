@@ -14,13 +14,23 @@ class Member:
         if not cls.daftar_member:
             print("Tidak ada Mahasiswa yang terdaftar dalam member.")
         else:
-            print("="*50)
+            print("=" * 50)
             print(f"{'NIM':<10}{'Nama':<20}{'Alamat':<20}{'Email':<20}{'Status Keanggotaan':<20}")
-            print("="*50)
+            print("=" * 50)
             for member in cls.daftar_member:
-                print(f"{member.nim_mahasiswa:<10}{member.nama:<20}{member.alamat:<20}{member.email:<20}{member.status_keanggotaan:<20}")
-            print("="*50)
-            
+                print(
+                    f"{member.nim_mahasiswa:<10}{member.nama:<20}{member.alamat:<20}"
+                    f"{member.email:<20}{member.status_keanggotaan:<20}"
+                )
+            print("=" * 50)
+
+    @classmethod
+    def cari_member(cls, nim_mahasiswa):
+        for member in cls.daftar_member:
+            if member.nim_mahasiswa == nim_mahasiswa:
+                return member
+        return None
+
     @classmethod
     def hapus_member(cls, nim_mahasiswa):
         for member in cls.daftar_member:
@@ -43,4 +53,3 @@ class Member:
                     member.status_keanggotaan = status_keanggotaan
                 return True
         return False
-
