@@ -7,7 +7,7 @@ class Member:
         Member.daftar_member.append(self)
 
     @classmethod
-    def tampilkan_anggota(cls):
+    def tampilkan_member(cls):
         if not cls.daftar_member:
             print("Tidak ada Mahasiswa yang terdaftar dalam member.")
         else:
