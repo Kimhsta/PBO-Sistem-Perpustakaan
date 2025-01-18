@@ -1,5 +1,5 @@
-from controller.member import Member
-from controller.peminjaman import Peminjaman
+from Controller.member import Member
+from Controller.peminjaman import Peminjaman
 
 class Laporan:
 
