@@ -1,27 +1,33 @@
-# 📚 PBO - Sistem Perpustakaan  
-Repository ini berisi implementasi dari **Sistem Informasi Perpustakaan** sederhana yang dikembangkan menggunakan prinsip **Pemrograman Berorientasi Objek (PBO)**. Proyek ini dirancang untuk memenuhi kebutuhan tugas kuliah dengan fokus pada pengelolaan buku, anggota perpustakaan, dan pengembalian buku dengan denda.
+# 📚 PBO - Sistem Perpustakaan
+
+Repository ini berisi implementasi dari **Sistem Informasi Perpustakaan** sederhana yang dikembangkan menggunakan prinsip **Pemrograman Berorientasi Objek (PBO)**. Proyek ini dirancang untuk memenuhi tugas kuliah dengan fokus pada pengelolaan buku, anggota perpustakaan, dan transaksi peminjaman serta pengembalian buku.
 
 ---
 
-## ✨ Fitur Utama  
+## ✨ Fitur Utama
+
 - **Manajemen Buku**:  
-  Tambah, edit, dan hapus data buku termasuk penerbit, pengarang, dan tahun terbit.  
+  Tambah, edit, dan hapus data buku termasuk informasi seperti judul, penulis, penerbit, dan tahun terbit.
+
 - **Manajemen Anggota**:  
-  Registrasi, login anggota, dan pengelolaan informasi anggota.  
-- **Peminjaman & Pengembalian**:  
-  - Catatan peminjaman buku.  
-  - Perhitungan denda berdasarkan keterlambatan pengembalian.  
-- **Login Petugas**:  
-  Autentikasi username dan password untuk petugas perpustakaan.  
+  Registrasi anggota baru, pembaruan data anggota, dan penghapusan anggota.
+
+- **Peminjaman & Pengembalian Buku**:  
+  - Pencatatan transaksi peminjaman buku oleh anggota.  
+  - Pencatatan pengembalian buku dan perhitungan denda keterlambatan (jika ada).
+
+- **Autentikasi Pengguna**:  
+  Sistem login untuk petugas perpustakaan dengan otentikasi username dan password.
 
 ---
 
-## 🔧 Teknologi yang Digunakan  
-- **Bahasa Pemrograman**: Java (OpenJDK 21)  
-- **Database**: MySQL  
-- **Framework**: Tidak ada, menggunakan kode murni.  
+## 🔧 Teknologi yang Digunakan
+
+- **Bahasa Pemrograman**: Python  
+- **Database**: SQLite  
+- **Arsitektur**: Model-View-Controller (MVC)  
 - **Tools**:  
-  - IDE: IntelliJ IDEA atau NetBeans  
-  - Database: MySQL Workbench atau phpMyAdmin  
+  - IDE: Visual Studio Code atau PyCharm  
+  - Manajemen Paket: pip  
 
 ---
