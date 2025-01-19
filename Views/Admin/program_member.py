@@ -4,20 +4,24 @@ import os
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def menu_member():
+def print_header(title):
     clear_screen()
-    print("Menu Kelola Member")
-    print("===================")
-    print("1. Tambah Member")
-    print("2. Lihat Member")
-    print("3. Cari Member")
-    print("4. Hapus Member")
-    print("5. Edit Member")
-    print("9. Kembali ke Menu Sebelumnya")
-    print("0. Kembali ke Menu Utama")
+    print("\033[1;36m" + "="*40 + "\033[0m")  # Header line
+    print(f"\033[1;33m{title.center(40)}\033[0m")  # Title in yellow
+    print("\033[1;36m" + "="*40 + "\033[0m")  # Footer line
 
-    choice = input("Pilih Menu: ")
+def menu_member():
+    print_header("Menu Kelola Member")
+    print("\033[1;32m1\033[0m. Tambah Member")
+    print("\033[1;32m2\033[0m. Lihat Member")
+    print("\033[1;32m3\033[0m. Cari Member")
+    print("\033[1;32m4\033[0m. Hapus Member")
+    print("\033[1;32m5\033[0m. Edit Member")
+    print("\033[1;32m9\033[0m. Kembali ke Menu Sebelumnya")
+    print("\033[1;32m0\033[0m. Kembali ke Menu Utama")
+    print("\033[1;36m" + "-"*40 + "\033[0m")  # Separator
 
+    choice = input("\033[1;34mPilih Menu: \033[0m")
     if choice == '1':
         tambah_member()
     elif choice == '2':
@@ -35,58 +39,59 @@ def menu_member():
         from main import main_menu
         main_menu()
     else:
-        print("Input tidak valid, silakan ulangi.")
+        print("\033[1;31mInput tidak valid, silakan ulangi.\033[0m")
+        input("Tekan Enter untuk melanjutkan.")
         menu_member()
 
 def tambah_member():
-    clear_screen()
+    print_header("Tambah Member")
     nim_mahasiswa = input("Masukkan NIM Mahasiswa: ")
-    nama = input("Masukkan nama member: ")
-    alamat = input("Masukkan alamat member: ")
-    email = input("Masukkan email member: ")
-    status_keanggotaan = input("Masukkan status keanggotaan member: ")
+    nama = input("Masukkan nama: ")
+    alamat = input("Masukkan alamat: ")
+    email = input("Masukkan email: ")
+    status_keanggotaan = input("Masukkan status [Aktif/Tidak Aktif]: ")
     Member(nim_mahasiswa, nama, alamat, email, status_keanggotaan)
-    print(f"Member '{nama}' berhasil ditambahkan!")
+    print(f"\033[1;32mMember '{nama}' berhasil ditambahkan!\033[0m")
     input("Tekan Enter untuk kembali.")
     menu_member()
 
 def hapus_member():
-    clear_screen()
+    print_header("Hapus Member")
     nim_mahasiswa = input("Masukkan NIM Mahasiswa yang ingin dihapus: ")
     if Member.hapus_member(nim_mahasiswa):
-        print("Member berhasil dihapus.")
+        print("\033[1;32mMember berhasil dihapus.\033[0m")
     else:
-        print("Member tidak ditemukan.")
+        print("\033[1;31mMember tidak ditemukan.\033[0m")
     input("Tekan Enter untuk kembali.")
     menu_member()
 
 def edit_member():
-    clear_screen()
+    print_header("Edit Member")
     nim_mahasiswa = input("Masukkan NIM Mahasiswa yang ingin diedit: ")
-    nama = input("Masukkan nama member baru: ")
-    alamat = input("Masukkan alamat member baru: ")
-    email = input("Masukkan email member baru: ")
-    status_keanggotaan = input("Masukkan status keanggotaan member baru: ")
+    nama = input("Masukkan nama baru: ")
+    alamat = input("Masukkan alamat baru: ")
+    email = input("Masukkan email baru: ")
+    status_keanggotaan = input("Masukkan status baru [Aktif/Tidak Aktif]: ")
     if Member.edit_member(nim_mahasiswa, nama, alamat, email, status_keanggotaan):
-        print("Member berhasil diedit.")
+        print("\033[1;32mMember berhasil diedit.\033[0m")
     else:
-        print("Member tidak ditemukan.")
+        print("\033[1;31mMember tidak ditemukan.\033[0m")
     input("Tekan Enter untuk kembali.")
     menu_member()
 
 def tampilkan_member():
-    clear_screen()
+    print_header("Daftar Member")
     Member.tampilkan_member()
     input("Tekan Enter untuk kembali.")
     menu_member()
 
 def cari_member():
-    clear_screen()
-    nim_mahasiswa = input("Masukkan Nim member: ")
+    print_header("Cari Member")
+    nim_mahasiswa = input("Masukkan NIM Member: ")
     member = Member.cari_member(nim_mahasiswa)
     if member:
-        print(f"NIM: {member.nim_mahasiswa} - Nama: {member.nama}")
+        print(f"\033[1;32mNIM: {member.nim_mahasiswa} - Nama: {member.nama}\033[0m")
     else:
-        print("Member tidak ditemukan.")
+        print("\033[1;31mMember tidak ditemukan.\033[0m")
     input("Tekan Enter untuk kembali.")
     menu_member()

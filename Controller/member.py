@@ -12,23 +12,38 @@ class Member:
     @classmethod
     def tampilkan_member(cls):
         if not cls.daftar_member:
-            print("Tidak ada Mahasiswa yang terdaftar dalam member.")
+            print("\033[1;31mTidak ada Mahasiswa yang terdaftar dalam member.\033[0m")
         else:
-            print("=" * 90)
-            print(f"{'NIM':<10}{'Nama':<20}{'Alamat':<20}{'Email':<20}{'Status Keanggotaan':<20}")
-            print("=" * 90)
+            print("\033[1;36m=" * 90 + "\033[0m")
+            print(
+                f"\033[1;33m{'NIM':<10}{'Nama':<20}{'Alamat':<20}{'Email':<30}{'Status':<10}\033[0m"
+            )
+            print("\033[1;36m=" * 90 + "\033[0m")
             for member in cls.daftar_member:
                 print(
                     f"{member.nim_mahasiswa:<10}{member.nama:<20}{member.alamat:<20}"
-                    f"{member.email:<20}{member.status_keanggotaan:<20}"
+                    f"{member.email:<30}{member.status_keanggotaan:<10}"
                 )
-            print("=" * 90)
+            print("\033[1;36m=" * 90 + "\033[0m")
 
     @classmethod
     def cari_member(cls, nim_mahasiswa):
         for member in cls.daftar_member:
+            nim_mahasiswa = input("Masukkan NIM Member: ")
+            member = Member.cari_member(nim_mahasiswa)
             if member.nim_mahasiswa == nim_mahasiswa:
+                print("\033[1;32mMember ditemukan!\033[0m")
+                print("\033[1;33m" + "=" * 50 + "\033[0m")
+                print(
+                    f"NIM: {member.nim_mahasiswa}\n"
+                    f"Nama: {member.nama}\n"
+                    f"Alamat: {member.alamat}\n"
+                    f"Email: {member.email}\n"
+                    f"Status: {member.status_keanggotaan}"
+                )
+                print("\033[1;33m" + "=" * 50 + "\033[0m")
                 return member
+        print("\033[1;31mMember tidak ditemukan.\033[0m")
         return None
 
     @classmethod
@@ -36,7 +51,9 @@ class Member:
         for member in cls.daftar_member:
             if member.nim_mahasiswa == nim_mahasiswa:
                 cls.daftar_member.remove(member)
+                print("\033[1;32mMember berhasil dihapus.\033[0m")
                 return True
+        print("\033[1;31mMember tidak ditemukan.\033[0m")
         return False
 
     @classmethod
@@ -51,5 +68,7 @@ class Member:
                     member.email = email
                 if status_keanggotaan:
                     member.status_keanggotaan = status_keanggotaan
+                print("\033[1;32mMember berhasil diedit.\033[0m")
                 return True
+        print("\033[1;31mMember tidak ditemukan.\033[0m")
         return False
