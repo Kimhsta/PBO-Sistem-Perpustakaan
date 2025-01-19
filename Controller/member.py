@@ -29,8 +29,6 @@ class Member:
     @classmethod
     def cari_member(cls, nim_mahasiswa):
         for member in cls.daftar_member:
-            nim_mahasiswa = input("Masukkan NIM Member: ")
-            member = Member.cari_member(nim_mahasiswa)
             if member.nim_mahasiswa == nim_mahasiswa:
                 print("\033[1;32mMember ditemukan!\033[0m")
                 print("\033[1;33m" + "=" * 50 + "\033[0m")
