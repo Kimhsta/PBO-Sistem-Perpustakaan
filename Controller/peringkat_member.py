@@ -16,7 +16,12 @@ class PeringkatMember:
     @classmethod
     def tampilkan_peringkat(cls):
         member_terbaik, poin_tertinggi = cls.hitung_peringkat()
+        print("\033[1;36m=" * 40 + "\033[0m")
+        print("\033[1;33m       Peringkat Member Terbaik       \033[0m")
+        print("\033[1;36m=" * 40 + "\033[0m")
         if member_terbaik:
-            print(f"Member terbaik: {member_terbaik.nama} dengan poin {poin_tertinggi}")
+            print(f"\033[1;32mMember Terbaik:\033[0m {member_terbaik.nama}")
+            print(f"\033[1;32mPoin Tertinggi:\033[0m {poin_tertinggi}")
         else:
-            print("Belum ada member yang meminjam buku.")
+            print("\033[1;31mBelum ada member yang meminjam buku.\033[0m")
+        print("\033[1;36m=" * 40 + "\033[0m")
