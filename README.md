@@ -7,7 +7,7 @@ Repository ini berisi implementasi dari **Sistem Informasi Perpustakaan** sederh
 ## ✨ Fitur Utama
 
 - **Manajemen Buku**:  
-  Tambah, edit, dan hapus data buku termasuk informasi seperti judul, penulis, penerbit, dan tahun terbit.
+  Tambah, edit, dan hapus data buku termasuk informasi seperti judul dan penulis.
 
 - **Manajemen Anggota**:  
   Registrasi anggota baru, pembaruan data anggota, dan penghapusan anggota.
@@ -24,10 +24,29 @@ Repository ini berisi implementasi dari **Sistem Informasi Perpustakaan** sederh
 ## 🔧 Teknologi yang Digunakan
 
 - **Bahasa Pemrograman**: Python  
-- **Database**: SQLite  
-- **Arsitektur**: Model-View-Controller (MVC)  
 - **Tools**:  
-  - IDE: Visual Studio Code atau PyCharm  
+  - IDE: Visual Studio Code  
   - Manajemen Paket: pip  
 
 ---
+
+## 📁 **Struktur Proyek**
+
+```plaintext
+PBO-Sistem-Perpustakaan/
+├── Controller/
+│   ├── buku_controller.py
+│   ├── anggota_controller.py
+│   └── peminjaman_controller.py
+├── Views/
+│   ├── main_view.py
+│   ├── buku_view.py
+│   ├── anggota_view.py
+│   └── peminjaman_view.py
+├── Models/
+│   ├── buku_model.py
+│   ├── anggota_model.py
+│   └── peminjaman_model.py
+├── __pycache__/
+├── main.py
+└── README.md
