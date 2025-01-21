@@ -1,0 +1,24 @@
+oop_perpus/
+|
+|_controller/ # berisi class untuk pengelolaan sistem
+|   |_anggota.py
+|   |_buku.py
+|   |_laporan.py
+|   |_login.py
+|   |_peminjaman.py
+|   |_pengembalian.py
+|   |_peringkat.py
+|
+|_view/ # berisi program tampilan untuk admin dan pengguna
+|  |_admin/
+|  |   |_program_anggota.py
+|  |   |_program_buku.py
+|  |   |_program_laporan.py
+|  |   |_program_peringkat.py
+|  |
+|  |_pengguna/
+|      |_program_login.py
+|      |_program_peminjaman.py
+|      |_program_pengembalian.py
+|
+|_main.py # menu utama aplikasi
